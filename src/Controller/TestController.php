@@ -14,6 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TestController {
+	/**
+	 * @Route("/", name="index"))
+	 */
 	public function index(  ) {
 		dd("cool");
 	}
@@ -21,11 +24,6 @@ class TestController {
 	/**
 	 * @Route("/test/{age<\d+>?0}", name="test", methods={"GET", "POST"},
 	 *     host="localhost", schemes={"https", "http"})
-	 *
-	 * @param Request $request
-	 * @param $age
-	 *
-	 * @return Response
 	 */
 	public function test(Request $request, $age) {
 		dump($request);

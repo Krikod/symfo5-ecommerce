@@ -10,6 +10,7 @@ namespace App\Controller;
 
 
 use App\Taxes\Calculator;
+use App\Taxes\Detector;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +19,8 @@ use Twig\Environment;
 
 class HelloController {
 
-	protected $calculator;
+//	protected $calculator;
+//	protected $detector;
 
 	/**
 	 * @param LoggerInterface $logger
@@ -27,14 +29,24 @@ class HelloController {
 	 *
 	 * @return Response
 	 */
-	public function hello(LoggerInterface $logger,
-		Calculator $calculator, $who = "world", Slugify $slugify, Environment $twig) {
+	public function hello(
+		$who = "world",
+//		LoggerInterface $logger,
+//		Calculator $calculator,
+//		Slugify $slugify,
+//		Environment $twig,
+//		Detector $detector
+	) {
 
+//		dump($detector->detect(101));
+//		dump($detector->detect(10));
+//
+//		dump($twig);
 //		dump($slugify->slugify("Hello world"));
-dump($twig);
-		$logger->info('voilà un log');
-		$tva = $calculator->calcul(120);
-		dd($tva);
+//
+//		$logger->info('voilà un log');
+//		$tva = $calculator->calcul(120);
+//		dump($tva);
 
 		return new Response( "Hello $who");
 	}

@@ -8,7 +8,8 @@
 
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController {
@@ -16,7 +17,8 @@ class HomeController extends AbstractController {
 	/**
 	 * @Route("/", name="homepage")
 	 */
-	public function homepage(  ) {
+	public function homepage(EntityManagerInterface $em) {
+
 		return $this->render('home.html.twig');
 
 	}

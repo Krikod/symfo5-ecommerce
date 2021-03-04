@@ -31,6 +31,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/liorchamla/faker-prices" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mbezhanov/faker-provider-collection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
@@ -41,6 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dependency-injection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/doctrine-bridge" />
@@ -56,6 +58,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/monolog-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -71,6 +75,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-profiler-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
@@ -107,6 +112,7 @@
           <root url="file://$MODULE_DIR$/vendor/laminas/laminas-zendframework-bridge" />
           <root url="file://$MODULE_DIR$/vendor/liorchamla/faker-prices" />
           <root url="file://$MODULE_DIR$/vendor/mbezhanov/faker-provider-collection" />
+          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/container" />
@@ -117,6 +123,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/config" />
           <root url="file://$MODULE_DIR$/vendor/symfony/console" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/debug-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/dependency-injection" />
           <root url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/doctrine-bridge" />
@@ -132,6 +139,8 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
           <root url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
           <root url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/monolog-bridge" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -147,6 +156,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
           <root url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/web-profiler-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/yaml" />
           <root url="file://$MODULE_DIR$/vendor/twig/extra-bundle" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
@@ -179,6 +189,7 @@
           <root url="file://$MODULE_DIR$/vendor/laminas/laminas-zendframework-bridge" />
           <root url="file://$MODULE_DIR$/vendor/liorchamla/faker-prices" />
           <root url="file://$MODULE_DIR$/vendor/mbezhanov/faker-provider-collection" />
+          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/container" />
@@ -189,6 +200,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/config" />
           <root url="file://$MODULE_DIR$/vendor/symfony/console" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/debug-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/dependency-injection" />
           <root url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/doctrine-bridge" />
@@ -204,6 +216,8 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
           <root url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
           <root url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/monolog-bridge" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -219,6 +233,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
           <root url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/web-profiler-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/yaml" />
           <root url="file://$MODULE_DIR$/vendor/twig/extra-bundle" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />

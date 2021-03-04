@@ -96,6 +96,9 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "fakerphp/faker": {
+        "version": "v1.13.0"
+    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
@@ -107,6 +110,12 @@
     },
     "laminas/laminas-zendframework-bridge": {
         "version": "1.1.1"
+    },
+    "liorchamla/faker-prices": {
+        "version": "2.0.0"
+    },
+    "mbezhanov/faker-provider-collection": {
+        "version": "2.0.0"
     },
     "nikic/php-parser": {
         "version": "v4.10.4"

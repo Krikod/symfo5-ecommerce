@@ -71,6 +71,7 @@
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/liorchamla/faker-prices" />
       <path value="$PROJECT_DIR$/vendor/mbezhanov/faker-provider-collection" />
+      <path value="$PROJECT_DIR$/vendor/bluemmb/faker-picsum-photos-provider" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

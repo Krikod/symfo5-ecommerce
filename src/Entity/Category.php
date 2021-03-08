@@ -30,7 +30,7 @@ class Category
     private $slug;
 
     /**
-     * @ORM\OneToMany(targetEntity=product::class, mappedBy="category")
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
      */
     private $products;
 

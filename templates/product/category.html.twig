@@ -4,6 +4,12 @@
 
 {% block body %}
 
+    {# https://bootswatch.com/lumen/ -> breadcrumb #}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+        <li class="breadcrumb-item active">{{ category.name }}</li>
+    </ol>
+
     <h1>Catégorie: {{ category.name }}</h1>
 
     <h1>Nos produits phares</h1>

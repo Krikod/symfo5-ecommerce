@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block body %}
+    {# https://bootswatch.com/lumen/ -> breadcrumb #}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+        <li class="breadcrumb-item"><a href="#">{{ product.category.name }}</a></li>
+        <li class="breadcrumb-item active">{{ product.name }}</li>
+    </ol>
+
     <h1>{{ product.name }} ({{ product.price / 100 }} €)</h1>
 
     <div class="row">

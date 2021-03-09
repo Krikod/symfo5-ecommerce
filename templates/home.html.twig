@@ -15,7 +15,10 @@
                                 <h4 class="card-title">{{ p.name }} ({{ p.price / 1000 }} &euro;)</h4>
                                 <span class="badge badge-info">{{ p.category.name }}</span>
                                 <p class="card-text">{{ p.shortDescription }}</p>
-                                <a href="#" class="btn btn-primary btn-sm">Détails</a>
+                                <a href="{{ path('product_show', {
+                                    'category_slug': p.category.slug,
+                                    'slug': p.slug
+                                }) }}" class="btn btn-primary btn-sm">Détails</a>
                                 <a href="#" class="btn btn-success btn-sm">Ajouter</a>
                             </div>
                         </div>

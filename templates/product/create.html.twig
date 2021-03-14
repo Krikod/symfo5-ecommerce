@@ -10,11 +10,12 @@
     <div class="row">
         <div class="col">
             {{ form_row(formView.name) }}
+            {{ form_row(formView.category) }}
             {{ form_row(formView.price) }}
         </div>
         <div class="col">
-            {{ form_row(formView.category) }}
             {{ form_row(formView.shortDescription) }}
+            {{ form_row(formView.mainPicture) }}
         </div>
     </div>
     <button type="submit" class="btn btn-primary"><i class="fas fa-save fa-lg"></i>

@@ -62,27 +62,23 @@ class ProductController extends AbstractController
 			->add('name', TextType::class, [
 			'label' => 'Nom du produit',
 			'attr' => [
-				'class' => 'form-control',
 				'placeholder' => 'Tapez le nom du produit'
 			]
 		])
 			->add('shortDescription', TextareaType::class, [
 				'label' => 'Description courte',
 				'attr' => [
-					'class' => 'form-control',
 					'placeholder' => 'Tapez une description assez courte mais parlante pour le visiteur'
 				]
 			])
 		->add('price', MoneyType::class, [
 			'label' => 'Prix du produit',
 			'attr' => [
-				'class' => 'form-control',
 				'placeholder' => 'Tapez le prix du produit en Euros'
 			]
 		])
 		->add('category', EntityType::class, [
 			'label' => 'Catégorie',
-			'attr' => ['class' => 'form-control'],
 //			Pas le placeholder des attributs html de la liste, mais OPTION du champ ChoiceType !
 			'placeholder' => '-- Choisir une catégorie --',
 			'class' => Category::class,

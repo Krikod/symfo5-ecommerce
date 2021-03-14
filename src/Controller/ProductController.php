@@ -54,19 +54,45 @@ class ProductController extends AbstractController
     }
 
 	/**
-	 * @Route("/admin/product/create", name="product_create")
+	 * @Route("/admin/product/{id}/edit", name="product_edit")
 	 */
-	public function create(
-		Request $request,
-		SluggerInterface $slugger,
-		EntityManagerInterface $em) {
+	public function edit($id, ProductRepository $repo,
+		Request $request, EntityManagerInterface $em, SluggerInterface $slugger) {
 
-		$form = $this->createForm(ProductType::class);
+		$product = $repo->find($id);
+
+		$form = $this->createForm(ProductType::class, $product);
 
 		$form->handleRequest($request);
 
 		if ($form->isSubmitted()) {
-			$product = $form->getData();
+			$product->setSlug(strtolower($slugger->slug($product->getName())));
+
+			$em->flush();
+
+		}
+
+		$formView = $form->createView();
+
+//		dd($product);
+		return $this->render('product/edit.html.twig', [
+			'product' => $product,
+			'formView' => $formView
+		]);
+	}
+
+
+	/**
+	 * @Route("/admin/product/create", name="product_create")
+	 */
+	public function create(Request $request, SluggerInterface $slugger,	EntityManagerInterface $em) {
+
+		$product = new Product();
+		$form = $this->createForm(ProductType::class, $product);
+
+		$form->handleRequest($request);
+
+		if ($form->isSubmitted()) {
 			$product->setSlug(strtolower($slugger->slug($product->getName())));
 
 		$em->persist($product);

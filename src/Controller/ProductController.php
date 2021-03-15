@@ -2,17 +2,16 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductController extends AbstractController
@@ -57,7 +56,8 @@ class ProductController extends AbstractController
 	 * @Route("/admin/product/{id}/edit", name="product_edit")
 	 */
 	public function edit($id, ProductRepository $repo,
-		Request $request, EntityManagerInterface $em, SluggerInterface $slugger) {
+		Request $request, EntityManagerInterface $em,
+		SluggerInterface $slugger, UrlGeneratorInterface $url_generator) {
 
 		$product = $repo->find($id);
 
@@ -70,11 +70,14 @@ class ProductController extends AbstractController
 
 			$em->flush();
 
+			return $this->redirectToRoute('product_show', [
+				'category_slug' => $product->getCategory()->getSlug(),
+				'slug' => $product->getSlug()
+			]);
 		}
 
 		$formView = $form->createView();
 
-//		dd($product);
 		return $this->render('product/edit.html.twig', [
 			'product' => $product,
 			'formView' => $formView
@@ -98,7 +101,11 @@ class ProductController extends AbstractController
 		$em->persist($product);
 		$em->flush();
 
-		dump($product);
+		return $this->redirectToRoute('product_show', [
+			'category_slug' => $product->getCategory()->getSlug(),
+			'slug' => $product->getSlug()
+		]);
+
 		}
 
 		$formView = $form->createView();

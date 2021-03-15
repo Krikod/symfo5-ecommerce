@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da8866a8-344d-4db9-8fba-0e2efd54cfc5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/product/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,10 +30,10 @@
       <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+            <state relative-caret-position="247">
+              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
-                <element signature="e#34#58#0#PHP" expanded="true" />
+                <element signature="e#34#57#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,7 +198,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1920" />
     <option name="y" value="41" />
-    <option name="width" value="1051" />
+    <option name="width" value="1229" />
     <option name="height" value="981" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -329,12 +327,12 @@
       <workItem from="1614783828990" duration="5910000" />
       <workItem from="1614862000230" duration="8624000" />
       <workItem from="1615223100502" duration="14661000" />
-      <workItem from="1615480908404" duration="44453000" />
+      <workItem from="1615480908404" duration="46338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149043000" />
+    <option name="totallyTimeSpent" value="150928000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,10 +344,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="41" width="1051" height="981" extended-state="0" />
+    <frame x="1920" y="41" width="1229" height="981" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30131447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25535563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821497" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935324" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -769,7 +767,7 @@
         <state relative-caret-position="437">
           <caret line="23" column="28" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="23" selection-end-column="28" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -796,10 +794,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+        <state relative-caret-position="247">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
+            <element signature="e#34#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

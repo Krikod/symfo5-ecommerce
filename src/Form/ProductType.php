@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Category;
 use App\Entity\Product;
+use App\Form\DataTransformer\CentimesTransformer;
 use Doctrine\Inflector\Rules\Transformation;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -38,7 +39,8 @@ class ProductType extends AbstractType
 		        'label' => 'Prix du produit',
 		        'attr' => [
 			        'placeholder' => 'Tapez le prix du produit en Euros'
-		        ]
+		        ],
+		        'divisor' => 100
 	        ])
 	        ->add('mainPicture', UrlType::class, [
 		        'label' => 'Image du produit',
@@ -56,18 +58,9 @@ class ProductType extends AbstractType
 	        ]);
 
         // LE DATATRANSFORMER DE SYMFONY
-        $builder->get('price')->addModelTransformer(new CallbackTransformer(
-        	function ($value) {
-        		if ($value === null) { return;}
+//        $builder->get('price')->addModelTransformer(new CentimesTransformer());
 
-				return $value / 100;
-	        },
-        	function ($value) {
-        		if ($value === null) { return;}
 
-        		return $value * 100;
-	        }
-        ));
 // AJOUT D'UN EVENEMENT SUR LE BUILDER
 
 //        $builder->addEventListener( FormEvents::POST_SUBMIT, function (FormEvent $event) {

@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\Category;
 use App\Entity\Product;
+use Doctrine\Inflector\Rules\Transformation;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -53,24 +55,43 @@ class ProductType extends AbstractType
 		        }
 	        ]);
 
-        $builder->addEventListener( FormEvents::POST_SUBMIT, function (FormEvent $event) {
-			$product = $event->getData();
-			/** @var Product $product */
-			if ($product->getPrice() !== null) {
-				$product->setPrice( $product->getPrice() * 100);
-			}
-        });
-        
-        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (formEvent $event) {
-            $form = $event->getForm();
-	        /** @var Product $product **/ // Autocomplétion pour PhpStorm
-            $product = $event->getData();
+        // LE DATATRANSFORMER DE SYMFONY
+        $builder->get('price')->addModelTransformer(new CallbackTransformer(
+        	function ($value) {
+        		if ($value === null) { return;}
 
-            // Afficher les prix en Euros
-            if ($product->getPrice() !== null) {
-	            $product->setPrice( $product->getPrice() / 100);
-            }
-//dd( $product);
+				return $value / 100;
+	        },
+        	function ($value) {
+        		if ($value === null) { return;}
+
+        		return $value * 100;
+	        }
+        ));
+// AJOUT D'UN EVENEMENT SUR LE BUILDER
+
+//        $builder->addEventListener( FormEvents::POST_SUBMIT, function (FormEvent $event) {
+//			$product = $event->getData();
+//			/** @var Product $product */
+//			if ($product->getPrice() !== null) {
+//				$product->setPrice( $product->getPrice() * 100);
+//			}
+//        });
+//
+//        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (formEvent $event) {
+//            $form = $event->getForm();
+//	        /** @var Product $product **/ // Autocomplétion pour PhpStorm
+//            $product = $event->getData();
+//
+//            // Afficher les prix en Euros
+//            if ($product->getPrice() !== null) {
+//	            $product->setPrice( $product->getPrice() / 100);
+//            }
+//
+
+//	    __________________
+
+// CONDITION POUR AJOUTER CHAMP CATEGORIE DANS L'EVENEMENT (CREATE, pas Edit)
 
 //           if ($product->getId() === null) {
 //	           $form
@@ -85,7 +106,7 @@ class ProductType extends AbstractType
 //		           }
 //	           ]);
 //           }
-        });
+//        });
     }
 
     public function configureOptions(OptionsResolver $resolver)

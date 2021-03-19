@@ -11,6 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProductType extends AbstractType
@@ -50,6 +52,40 @@ class ProductType extends AbstractType
 			        return strtoupper($category->getName());
 		        }
 	        ]);
+
+        $builder->addEventListener( FormEvents::POST_SUBMIT, function (FormEvent $event) {
+			$product = $event->getData();
+			/** @var Product $product */
+			if ($product->getPrice() !== null) {
+				$product->setPrice( $product->getPrice() * 100);
+			}
+        });
+        
+        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (formEvent $event) {
+            $form = $event->getForm();
+	        /** @var Product $product **/ // Autocomplétion pour PhpStorm
+            $product = $event->getData();
+
+            // Afficher les prix en Euros
+            if ($product->getPrice() !== null) {
+	            $product->setPrice( $product->getPrice() / 100);
+            }
+//dd( $product);
+
+//           if ($product->getId() === null) {
+//	           $form
+//		           ->add('category', EntityType::class, [
+//		           'label' => 'Catégorie',
+////			Pas le placeholder des attributs html de la liste, mais OPTION du champ ChoiceType !
+//		           'placeholder' => '-- Choisir une catégorie --',
+//		           'class' => Category::class,
+////			Choice_label ==> Fonction ou Nom de la category: 'name'
+//		           'choice_label' => function(Category $category) {
+//			           return strtoupper($category->getName());
+//		           }
+//	           ]);
+//           }
+        });
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -65,8 +65,7 @@ class ProductController extends AbstractController
 		$form->handleRequest($request);
 
 		if ($form->isSubmitted()) {
-			$product->setSlug(strtolower($slugger->slug($product->getName())));
-
+//			$product->setSlug(strtolower($slugger->slug($product->getName())));
 			$em->flush();
 
 			return $this->redirectToRoute('product_show', [

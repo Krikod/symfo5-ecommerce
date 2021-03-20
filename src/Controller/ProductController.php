@@ -12,6 +12,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Validator\Constraints\Collection;
+use Symfony\Component\Validator\Constraints\GreaterThan;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\LessThan;
+use Symfony\Component\Validator\Constraints\LessThanOrEqual;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class ProductController extends AbstractController
 {
@@ -56,8 +63,54 @@ class ProductController extends AbstractController
 	 */
 	public function edit($id, ProductRepository $repo,
 		Request $request, EntityManagerInterface $em,
-		SluggerInterface $slugger) {
+		SluggerInterface $slugger,
+		ValidatorInterface $validator) {
 
+		// Validation complexe
+		$client = [
+			'nom' => 'Pat',
+			'prenom' => 'Kr',
+			'voiture' => [
+				'marque' => 'Renault',
+				'couleur' => ''
+			]
+		];
+
+		$collection = new  Collection([
+			'nom' => new NotBlank(['message' => "Le nom ne doit pas être vide !"]),
+			'prenom' => [
+				new  NotBlank(['message' => "Le prénom ne doit pas être vide !"]),
+				new Length(['min' => 3, 'minMessage' => "Le prénom ne doit pas faire moins de 3 caractères." ])
+			],
+			'voiture' => new Collection([
+					'marque' => new NotBlank(['message' => "La marque de la voiture est obligatoire!"]),
+					'couleur' => new NotBlank(['message' => "La couleur de la voiture est obligatoire"])
+			])
+		]);
+
+		$resultat = $validator->validate($client, $collection);
+//		dd( $resultat);
+
+
+// Validation de scalaires
+//		$age = 10;
+//		$resultat = $validator->validate($age, [
+//			new LessThanOrEqual([
+//				'value' => 120,
+//				'message' => "L'âge doit etre inférieur à {{ compared_value }}, mais vous avez donné {{ value }}."
+//			]),
+//			new GreaterThan([
+//				'value' => 0,
+//				'message' => "L'age doit être sup à 0."
+//			])
+//		]);
+//		dd( $resultat );
+
+		if ($resultat->count() > 0) {
+			dd( "Il y a des erreurs ", $resultat);
+		}
+		dd( "Tout va bien");
+		
 		$product = $repo->find($id);
 
 		$form = $this->createForm(ProductType::class, $product);
@@ -66,7 +119,7 @@ class ProductController extends AbstractController
 
 		if ($form->isSubmitted()) {
 //			$product->setSlug(strtolower($slugger->slug($product->getName())));
-			dd( $form->getData());
+//			dd( $form->getData());
 			$em->flush();
 
 			return $this->redirectToRoute('product_show', [

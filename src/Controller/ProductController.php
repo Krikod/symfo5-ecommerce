@@ -66,30 +66,43 @@ class ProductController extends AbstractController
 		SluggerInterface $slugger,
 		ValidatorInterface $validator) {
 
+		$product = new Product;
+//		$product->setName('Bougie')
+//		->setPrice( 200);
+		$resultat = $validator->validate( $product);
+
+
+		if ($resultat->count() > 0) {
+			dd( "Il y a des erreurs ", $resultat);
+		}
+		dd( "Tout va bien");
+
+
+
+
 		// Validation complexe
-		$client = [
-			'nom' => 'Pat',
-			'prenom' => 'Kr',
-			'voiture' => [
-				'marque' => 'Renault',
-				'couleur' => ''
-			]
-		];
-
-		$collection = new  Collection([
-			'nom' => new NotBlank(['message' => "Le nom ne doit pas être vide !"]),
-			'prenom' => [
-				new  NotBlank(['message' => "Le prénom ne doit pas être vide !"]),
-				new Length(['min' => 3, 'minMessage' => "Le prénom ne doit pas faire moins de 3 caractères." ])
-			],
-			'voiture' => new Collection([
-					'marque' => new NotBlank(['message' => "La marque de la voiture est obligatoire!"]),
-					'couleur' => new NotBlank(['message' => "La couleur de la voiture est obligatoire"])
-			])
-		]);
-
-		$resultat = $validator->validate($client, $collection);
-//		dd( $resultat);
+//		$client = [
+//			'nom' => 'Pat',
+//			'prenom' => 'Kr',
+//			'voiture' => [
+//				'marque' => 'Renault',
+//				'couleur' => ''
+//			]
+//		];
+//
+//		$collection = new  Collection([
+//			'nom' => new NotBlank(['message' => "Le nom ne doit pas être vide !"]),
+//			'prenom' => [
+//				new  NotBlank(['message' => "Le prénom ne doit pas être vide !"]),
+//				new Length(['min' => 3, 'minMessage' => "Le prénom ne doit pas faire moins de 3 caractères." ])
+//			],
+//			'voiture' => new Collection([
+//					'marque' => new NotBlank(['message' => "La marque de la voiture est obligatoire!"]),
+//					'couleur' => new NotBlank(['message' => "La couleur de la voiture est obligatoire"])
+//			])
+//		]);
+//
+//		$resultat = $validator->validate($client, $collection);
 
 
 // Validation de scalaires
@@ -106,10 +119,11 @@ class ProductController extends AbstractController
 //		]);
 //		dd( $resultat );
 
-		if ($resultat->count() > 0) {
-			dd( "Il y a des erreurs ", $resultat);
-		}
-		dd( "Tout va bien");
+//		if ($resultat->count() > 0) {
+//			dd( "Il y a des erreurs ", $resultat);
+//		}
+//		dd( "Tout va bien");
+		// Ou voir le Profiler de Symfony qui affiche les violations !
 		
 		$product = $repo->find($id);
 

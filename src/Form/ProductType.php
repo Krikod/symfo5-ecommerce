@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use Ap\Form\Type\PriceType;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\DataTransformer\CentimesTransformer;
@@ -10,6 +11,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -35,12 +37,13 @@ class ProductType extends AbstractType
 			        'placeholder' => 'Tapez une description assez courte mais parlante pour le visiteur'
 		        ]
 	        ])
-	        ->add('price', MoneyType::class, [
+	        ->add('price', MoneyType::class, [ // Notre PriceType créé
 		        'label' => 'Prix du produit',
 		        'attr' => [
 			        'placeholder' => 'Tapez le prix du produit en Euros'
 		        ],
 		        'divisor' => 100
+//	            'divide' => false
 	        ])
 	        ->add('mainPicture', UrlType::class, [
 		        'label' => 'Image du produit',

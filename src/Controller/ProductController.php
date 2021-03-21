@@ -66,16 +66,25 @@ class ProductController extends AbstractController
 		SluggerInterface $slugger,
 		ValidatorInterface $validator) {
 
-		$product = new Product;
-//		$product->setName('Bougie')
+
+//		$product = new Product;
+//
+//		$result = $validator->validate( $product, null,
+//			 ['Default','with-price']);
+//		dd( $result);
+
+
+		// VALIDATION D'OBJET
+//		$product = new Product;
+//		$product->setName('Bo')
 //		->setPrice( 200);
-		$resultat = $validator->validate( $product);
-
-
-		if ($resultat->count() > 0) {
-			dd( "Il y a des erreurs ", $resultat);
-		}
-		dd( "Tout va bien");
+//		$resultat = $validator->validate( $product);
+//
+//
+//		if ($resultat->count() > 0) {
+//			dd( "Il y a des erreurs ", $resultat);
+//		}
+//		dd( "Tout va bien");
 
 
 
@@ -131,7 +140,7 @@ class ProductController extends AbstractController
 
 		$form->handleRequest($request);
 
-		if ($form->isSubmitted()) {
+		if ($form->isSubmitted() && $form->isValid()) {
 //			$product->setSlug(strtolower($slugger->slug($product->getName())));
 //			dd( $form->getData());
 			$em->flush();
@@ -161,7 +170,7 @@ class ProductController extends AbstractController
 
 		$form->handleRequest($request);
 
-		if ($form->isSubmitted()) {
+		if ($form->isSubmitted() && $form->isValid()) {
 			$product->setSlug(strtolower($slugger->slug($product->getName())));
 
 		$em->persist($product);

@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block body %}
+
+    <a class="btn btn-success btn-lg" href="{{ path('category_create') }}">Créer catégorie</a>
+    <a class="btn btn-success btn-lg" href="{{ path('product_create') }}">créer produit</a>
+
     <h1>Nos produits phares</h1>
         <div class="row">
         {% for p in products %}

@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use Ap\Form\Type\PriceType;
+use App\Form\Type\PriceType;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\DataTransformer\CentimesTransformer;
@@ -36,7 +36,8 @@ class ProductType extends AbstractType
 		        'label' => 'Description courte',
 		        'attr' => [
 			        'placeholder' => 'Tapez une description assez courte mais parlante pour le visiteur'
-		        ]
+		        ],
+		        'required' => false
 	        ])
 	        ->add('price', MoneyType::class, [ // Notre PriceType créé
 		        'label' => 'Prix du produit',

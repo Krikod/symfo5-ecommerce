@@ -6,7 +6,8 @@
 
     <h1>Créer une catégorie</h1>
 
-    {{ form_start(formView) }}
+    {#{{ form_start(formView) }}#}
+    {{ form_start(formView, {"attr": {"novalidate":"novalidate"}}) }}
     {{ form_errors(formView) }}
 
     <div class="row">

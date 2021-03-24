@@ -73,6 +73,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-info" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/proxy-manager-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-core" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-csrf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-guard" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-http" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/string" />
@@ -161,6 +166,11 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/property-info" />
           <root url="file://$MODULE_DIR$/vendor/symfony/proxy-manager-bridge" />
           <root url="file://$MODULE_DIR$/vendor/symfony/routing" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-core" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-csrf" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-guard" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-http" />
           <root url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
           <root url="file://$MODULE_DIR$/vendor/symfony/string" />
@@ -245,6 +255,11 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/property-info" />
           <root url="file://$MODULE_DIR$/vendor/symfony/proxy-manager-bridge" />
           <root url="file://$MODULE_DIR$/vendor/symfony/routing" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-core" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-csrf" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-guard" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-http" />
           <root url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
           <root url="file://$MODULE_DIR$/vendor/symfony/string" />

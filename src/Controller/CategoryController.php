@@ -6,10 +6,17 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpParser\Node\Expr\Throw_;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -58,9 +65,26 @@ class CategoryController extends AbstractController
 	/**
 	 * @Route("/admin/category/{id}/edit", name="category_edit")
 	 */
-	public function edit($id, Request $request, CategoryRepository $repo, EntityManagerInterface $em, SluggerInterface $slugger) {
+	public function edit($id, Request $request, CategoryRepository $repo,
+		EntityManagerInterface $em, SluggerInterface $slugger) {
 
 		$category = $repo->find($id);
+
+		if (!$category) {
+			throw new NotFoundHttpException("Cette catégorie n'existe pas");
+		}
+
+		// Le créateur de la catégorie est le seul à pouvoir la modifier // todo faire différemment
+		$user = $this->getUser(); // Security->getUser()
+
+		if (!$user) {
+			return $this->redirectToRoute('security_login');
+		}
+
+		if ($user !== $category->getOwner()) {
+			throw new AccessDeniedHttpException("Vous n'êtes pas le propriétaire de cette catégorie");
+			// Ou redirection !
+		}
 
 		$form = $this->createForm(CategoryType::class, $category);
 

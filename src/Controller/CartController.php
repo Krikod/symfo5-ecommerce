@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -43,10 +45,12 @@ class CartController extends AbstractController
 //	    dd( $session->get('cart'));
 //	    dd( $session->getBag( 'flashes'));
 
-	    /** @var FlashBag */
-	    $flashBag = $session->getBag( 'flashes');
+	    // Effacer car on se livre le FlashBagInterface
+//	    /** @var FlashBag */
+//	    $flashBag = $session->getBag( 'flashes');
+//		$flashBag->add('success', "Le produit a bien été ajouté au panier");
+		$this->addFlash('success', "Le produit a bien été ajouté au panier");
 
-		$flashBag->add('success', "Le produit a bien été ajouté au panier");
 //		$flashBag->add('warning', "Attention !");
 //		dump( $flashBag->get('success'));
 //	    dd($flashBag);
@@ -55,5 +59,31 @@ class CartController extends AbstractController
 	    	'category_slug' => $product->getCategory()->getSlug(),
 	    	'slug' => $product->getSlug()
 	    ]);
+    }
+
+	/**
+	 * @Route("/cart", name="cart_show")
+	 */
+	public function show( SessionInterface $session, ProductRepository $repo ) {
+
+		$detailedCart = [];
+		$total = 0;
+
+		foreach ($session->get( 'cart', []) as $id => $qty) {
+			$product = $repo->find( $id);
+			$detailedCart[] = [
+				'product' => $product,
+				'qty' => $qty
+			];
+
+			$total += ($product->getPrice() * $qty);
+		}
+
+		dump( $detailedCart);
+
+		return $this->render( 'cart/index.html.twig', [
+			'items' => $detailedCart,
+			'total' => $total
+		]);
     }
 }

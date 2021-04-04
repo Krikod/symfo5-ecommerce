@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da8866a8-344d-4db9-8fba-0e2efd54cfc5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/product/_product_card.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cart/CartService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/CartController.php" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html.twig" afterPath="$PROJECT_DIR$/templates/home.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/category.html.twig" afterPath="$PROJECT_DIR$/templates/product/category.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/shared/_navbar.html.twig" afterPath="$PROJECT_DIR$/templates/shared/_navbar.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,13 +32,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
+      <file leaf-file-name="CartService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cart/CartService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1196">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding>
+                <element signature="e#28#65#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CartController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="86" column="11" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="86" selection-end-column="11" />
+            <state relative-caret-position="-221">
+              <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
-                <element signature="e#34#71#0#PHP" expanded="true" />
+                <element signature="e#34#59#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/templates/cart/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="575">
-              <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -116,6 +123,7 @@
         <option value="$PROJECT_DIR$/templates/cart/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/shared/_navbar.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/src/Cart/CartService.php" />
       </list>
     </option>
   </component>
@@ -220,9 +228,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1974" />
-    <option name="y" value="41" />
-    <option name="width" value="964" />
+    <option name="x" value="48" />
+    <option name="y" value="88" />
+    <option name="width" value="879" />
     <option name="height" value="981" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -271,55 +279,13 @@
             <path>
               <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
               <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
               <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="DataFixtures" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Security" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommerce-cours" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Security" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Voter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Cart" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ecommerce-cours" type="b2602c69:ProjectViewProjectNode" />
@@ -368,7 +334,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecommerce2021" />
     <property name="SearchEverywhereHistoryKey" value="log&#9;ACTION&#9;LogDebugConfigure" />
@@ -419,12 +385,12 @@
       <workItem from="1616142923752" duration="39873000" />
       <workItem from="1616495116711" duration="37153000" />
       <workItem from="1616751576853" duration="38118000" />
-      <workItem from="1617207997052" duration="18108000" />
+      <workItem from="1617207997052" duration="26179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302663000" />
+    <option name="totallyTimeSpent" value="310734000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -436,7 +402,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1974" y="41" width="964" height="981" extended-state="0" />
+    <frame x="48" y="88" width="879" height="981" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41367713" sideWeight="0.4935305" order="0" side_tool="false" content_ui="combo" />
@@ -498,13 +464,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/form/CallbackTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/form/DataTransformerInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="678">
@@ -896,19 +855,29 @@
     <entry file="file://$PROJECT_DIR$/templates/cart/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cart/CartService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#28#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="86" column="11" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="86" selection-end-column="11" />
+        <state relative-caret-position="-221">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
-            <element signature="e#34#71#0#PHP" expanded="true" />
+            <element signature="e#34#59#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -46,6 +46,22 @@ class CartService {
 		$this->session->set( 'cart', $cart);
 	}
 
+	public function decrement(int $id) {
+		$cart = $this->session->get( 'cart', []);
+		if (!array_key_exists($id, $cart)) {
+			return;
+		}
+		// Si produit à 1, le supprimer
+		if ($cart[$id] === 1) {
+			$this->remove( $id);
+			return;
+		} else{
+			// Si produit à plus de 1, décrémenter
+			$cart[$id]--;
+			$this->session->set( 'cart', $cart);
+		}
+	}
+
 	public function getTotal(  ) : int {
 		$total = 0;
 		foreach ($this->session->get( 'cart', []) as $id => $qty) {

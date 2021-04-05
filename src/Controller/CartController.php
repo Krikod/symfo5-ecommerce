@@ -19,7 +19,7 @@ class CartController extends AbstractController
     /**
      * @Route("/cart/add/{id}", name="cart_add", requirements={"id":"\d+"})
      */
-    public function add($id, ProductRepository $repo, CartService $cart_service): Response
+    public function add($id, ProductRepository $repo, CartService $cart_service, Request $request): Response
     {
     	// Produit existe ?
 	    $product = $repo->find( $id);
@@ -40,6 +40,9 @@ class CartController extends AbstractController
 //		dump( $flashBag->get('success'));
 //	    dd($flashBag);
 
+	    if ($request->query->get( 'returnToCart')) {
+	    	return $this->redirectToRoute( 'cart_show');
+	    }
 	    return $this->redirectToRoute( 'product_show', [
 	    	'category_slug' => $product->getCategory()->getSlug(),
 	    	'slug' => $product->getSlug()
@@ -73,5 +76,18 @@ class CartController extends AbstractController
 		$this->addFlash( "success", "Le produit a bien été supprimé du panier");
 		return $this->redirectToRoute( 'cart_show');
 
+    }
+
+	/**
+	 * @Route("/cart/decrement/{id}", name="cart_decrement", requirements={"id":"\d+"})
+	 */
+	public function decrement(int $id, CartService $cartService, ProductRepository $repo) {
+		if (!$repo->find( $id)) {
+			throw $this->createNotFoundException("Le produit $id n'existe pas et ne peut pas être décrémenté");
+		}
+
+		$cartService->decrement($id);
+		$this->addFlash( 'success', 'Le produit a bien été retiré du panier');
+		return $this->redirectToRoute( 'cart_show');
     }
 }

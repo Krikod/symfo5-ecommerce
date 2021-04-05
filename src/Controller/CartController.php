@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
@@ -58,5 +59,19 @@ class CartController extends AbstractController
 			'items' => $detailedCart,
 			'total' => $total
 		]);
+    }
+
+	/**
+	 * @Route("/cart/delete/{id}", name="cart_delete", requirements={"id":"\d+"})
+	 */
+	public function delete($id, ProductRepository $repo, CartService $cartService) {
+		if (!$repo->find( $id)) {
+			throw $this->createNotFoundException("Le produit $id n'existe pas et ne peut pas être supprimé");
+		}
+
+		$cartService->remove($id);
+		$this->addFlash( "success", "Le produit a bien été supprimé du panier");
+		return $this->redirectToRoute( 'cart_show');
+
     }
 }

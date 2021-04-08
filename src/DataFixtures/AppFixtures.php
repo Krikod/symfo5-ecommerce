@@ -60,13 +60,17 @@ class AppFixtures extends Fixture
 		}
 
 //		Création des catégories
+		$products = []; // Pour ajouter products à purchase
+
 		for ($c = 0; $c < 3; $c++) {
 			$category = new Category();
 			$category->setName($faker->department) // Bezhanov
 				->setSlug(strtolower($this->slugger->slug($category->getName())));
 
 			$manager->persist($category);
+
 //      Création des produits
+
 			for ($p = 0; $p < mt_rand(15, 20); $p++) {
 				$product = new Product();
 				$product->setName($faker->productName) // Bezhanov
@@ -77,12 +81,13 @@ class AppFixtures extends Fixture
 						->setShortDescription($faker->paragraph())
 						// bluemmb, true=images différentes
 						->setMainPicture($faker->imageUrl(400, 400, true));
+				$products[] = $product;
 
 				$manager->persist($product);
 			}
         }
 
-        // Purchase
+        // Purchase, et ajouter products
 		for ($p = 0; $p < mt_rand(20, 40); $p++) {
 			$purchase = new Purchase();
 			$purchase->setFullName( $faker->name)
@@ -92,6 +97,11 @@ class AppFixtures extends Fixture
 				->setUser( $faker->randomElement($users))
 				->setTotal( mt_rand(2000, 30000))
 				->setPurchasedAt( $faker->dateTimeInInterval('-6 months'));
+
+			$selectedProducts = $faker->randomElements($products, mt_rand(3, 7));
+			foreach ($selectedProducts as $product) {
+				$purchase->addProduct( $product);
+			}
 
 			if ($faker->boolean(90)) {
 				$purchase->setStatus(Purchase::STATUS_PAID);

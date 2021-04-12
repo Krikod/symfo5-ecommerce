@@ -27,9 +27,9 @@
                     <td>{{ p.purchasedAt | date('d/m/Y - H:i') }}</td>
                     <td>
                         <ul>
-                            {# Twig appelle getProducts sur la purchase (méthode Entité Purchase) #}
-                            {% for product in p.products %}
-                                <li>{{ product.name }} ({{ product.price / 100 }}) €</li>
+                            {# Twig appelle getProductName sur la purchaseItem (méthode Entité PurchaseItem) #}
+                            {% for item in p.purchaseItems %}
+                                <li>{{ item.quantity }} x {{ item.productName }} ({{ item.total / 100 }} €)</li>
                             {% endfor %}
                         </ul>
                     </td>

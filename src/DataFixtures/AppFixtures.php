@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\Purchase;
+use App\Entity\PurchaseItem;
 use App\Entity\User;
 use Bezhanov\Faker\Provider\Commerce;
 use Bluemmb\Faker\PicsumPhotosProvider;
@@ -98,9 +99,21 @@ class AppFixtures extends Fixture
 				->setTotal( mt_rand(2000, 30000))
 				->setPurchasedAt( $faker->dateTimeInInterval('-6 months'));
 
+
 			$selectedProducts = $faker->randomElements($products, mt_rand(3, 7));
 			foreach ($selectedProducts as $product) {
-				$purchase->addProduct( $product);
+				$purchaseItem = new PurchaseItem();
+				$purchaseItem->setProduct( $product)
+				->setQuantity( mt_rand(1, 3))
+				->setProductName( $product->getName())
+				->setProductPrice( $product->getPrice())
+				->setTotal(
+					$purchaseItem->getProductPrice() * $purchaseItem->getQuantity()
+				)
+				->setPurchase( $purchase);
+
+				$manager->persist( $purchaseItem);
+
 			}
 
 			if ($faker->boolean(90)) {

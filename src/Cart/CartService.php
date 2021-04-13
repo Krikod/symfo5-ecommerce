@@ -120,7 +120,7 @@ class CartService {
 	}
 
 	/**
-	 * @return array
+	 * @return CartItem[]
 	 */
 	public function getDetailedCartItems() : array {
 

@@ -3,7 +3,11 @@
 namespace App\Controller\Purchase;
 
 use App\Cart\CartService;
+use App\Entity\Purchase;
+use App\Entity\PurchaseItem;
 use App\Form\CartConfirmationType;
+use Doctrine\ORM\EntityManagerInterface;
+use Faker\Provider\DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -21,12 +25,15 @@ class PurchaseConfirmationController extends AbstractController {
 	protected $router;
 	protected $security;
 	protected $cart;
+	protected $em;
 
-	public function __construct(FormFactoryInterface $factory, RouterInterface $router, Security $security, CartService $cart) {
+	public function __construct(FormFactoryInterface $factory, RouterInterface $router,
+		Security $security, CartService $cart, EntityManagerInterface $em) {
 		$this->factory = $factory;
 		$this->router = $router;
 		$this->security = $security;
 		$this->cart = $cart;
+		$this->em = $em;
 	}
 
 	/**
@@ -59,19 +66,40 @@ class PurchaseConfirmationController extends AbstractController {
 		}
 
 		// 5. Si tout ok, créer une purchase
-
+		$purchase = $form->getData();
 
 		// 6. La lier avec l'utilisateur connecté -> Security
 
 
+		$purchase->setUser($user)
+		->setPurchasedAt(new \DateTime());
+		$this->em->persist( $purchase);
+
+
 		// 7. La lier avec les produits du panier -> CartService
+//		$total = 0;
+
+		foreach ( $this->cart->getDetailedCartItems() as $cart_item ) {
+			$purchaseItem = new PurchaseItem();
+			$purchaseItem->setPurchase( $purchase)
+				->setProduct( $cart_item->product)
+				->setProductName( $cart_item->product->getName())
+				->setQuantity( $cart_item->qty)
+				->setTotal( $cart_item->getTotal())
+				->setProductPrice( $cart_item->product->getPrice());
+
+//			$total += $cart_item->getTotal();
+
+			$this->em->persist( $purchaseItem);
+		}
+		$purchase->setTotal($this->cart->getTotal());
 
 
 		// 8. Enregistrer la commande -> EntityManagerInterface
+		$this->em->flush();
 
-
-
-
+		$flash_bag->add( 'success', 'La commande a bien été enregistrée');
+		return new RedirectResponse( $this->router->generate( 'purchases_index'));
 	}
 
 }

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da8866a8-344d-4db9-8fba-0e2efd54cfc5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cart/CartService.php" afterPath="$PROJECT_DIR$/src/Cart/CartService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Purchase/PurchaseConfirmationController.php" afterPath="$PROJECT_DIR$/src/Controller/Purchase/PurchaseConfirmationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/CartConfirmationType.php" afterPath="$PROJECT_DIR$/src/Form/CartConfirmationType.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,11 +55,12 @@
       <file leaf-file-name="PurchaseConfirmationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/Purchase/PurchaseConfirmationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="101" column="78" lean-forward="false" selection-start-line="101" selection-start-column="78" selection-end-line="101" selection-end-column="78" />
+            <state relative-caret-position="515">
+              <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
               <folding>
                 <element signature="e#43#68#0#PHP" expanded="true" />
-                <element signature="e#3480#3497#1#PHP" expanded="true" />
+                <marker date="1618387430221" expanded="false" signature="1954:1963" ph="/cart" />
+                <marker date="1618387430221" expanded="false" signature="2713:2722" ph="/cart" />
               </folding>
             </state>
           </provider>
@@ -456,12 +454,12 @@
       <workItem from="1617701302829" duration="11467000" />
       <workItem from="1617830674247" duration="11498000" />
       <workItem from="1618225538379" duration="17517000" />
-      <workItem from="1618334788697" duration="3218000" />
+      <workItem from="1618334788697" duration="4979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374267000" />
+    <option name="totallyTimeSpent" value="376028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -535,13 +533,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Form/ProductType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/category/_menu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -916,13 +907,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="320" column="20" lean-forward="false" selection-start-line="320" selection-start-column="20" selection-end-line="320" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Purchase/PurchaseConfirmationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="101" column="78" lean-forward="false" selection-start-line="101" selection-start-column="78" selection-end-line="101" selection-end-column="78" />
+        <state relative-caret-position="515">
+          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
           <folding>
             <element signature="e#43#68#0#PHP" expanded="true" />
-            <element signature="e#3480#3497#1#PHP" expanded="true" />
+            <marker date="1618387430221" expanded="false" signature="1954:1963" ph="/cart" />
+            <marker date="1618387430221" expanded="false" signature="2713:2722" ph="/cart" />
           </folding>
         </state>
       </provider>

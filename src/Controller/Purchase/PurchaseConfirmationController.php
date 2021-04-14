@@ -82,7 +82,9 @@ class PurchaseConfirmationController extends AbstractController {
 
 
 		$purchase->setUser($user)
-		->setPurchasedAt(new \DateTime());
+		         ->setPurchasedAt(new \DateTime())
+		         ->setTotal($this->cart->getTotal());
+
 		$this->em->persist( $purchase);
 
 
@@ -102,11 +104,13 @@ class PurchaseConfirmationController extends AbstractController {
 
 			$this->em->persist( $purchaseItem);
 		}
-		$purchase->setTotal($this->cart->getTotal());
+//		$purchase->setTotal($this->cart->getTotal());
 
 
 		// 8. Enregistrer la commande -> EntityManagerInterface
 		$this->em->flush();
+
+		$this->cart->empty();
 
 //		$flash_bag->add( 'success', 'La commande a bien été enregistrée');
 //		return new RedirectResponse( $this->router->generate( 'purchases_index'));

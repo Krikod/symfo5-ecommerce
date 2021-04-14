@@ -28,6 +28,8 @@ class CartService {
 		$this->repo    = $repo;
 	}
 
+	// Construct donc au lieu de $session, on aura $this->session
+
 	/**
 	 * @return array
 	 */
@@ -42,7 +44,10 @@ class CartService {
 		$this->session->set( 'cart', $cart);
 	}
 
-	// Construct donc au lieu de $session, on a $this->session
+	public function empty() {
+//		$this->session->remove( 'cart');
+		$this->saveCart([]);
+	}
 
 	/**
 	 * @param int $id

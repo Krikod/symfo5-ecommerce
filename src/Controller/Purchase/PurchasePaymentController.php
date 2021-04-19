@@ -26,7 +26,7 @@ class PurchasePaymentController extends AbstractController {
 			'currency' => 'eur',
 		]);
 
-		dump( $intent->client_secret);
+//		dump( $intent->client_secret);
 
 
 		return $this->render( 'purchase/payment.html.twig', [

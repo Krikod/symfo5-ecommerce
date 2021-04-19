@@ -14,10 +14,6 @@ class PurchasePaymentController extends AbstractController {
 	public function showCardForm( $id, PurchaseRepository $repo ) {
 		$purchase = $repo->find( $id);
 
-
-//		echo 'Curl: ', function_exists('curl_version') ? 'Enabled' . "\xA" : 'Disabled' . "\xA";
-//		die();
-
 		if (!$purchase) {
 			return $this->redirectToRoute( 'cart_show');
 		}
@@ -30,9 +26,11 @@ class PurchasePaymentController extends AbstractController {
 			'currency' => 'eur',
 		]);
 
-		dd( $intent);
+		dump( $intent->client_secret);
 
 
-		return $this->render( 'purchase/payment.html.twig');
+		return $this->render( 'purchase/payment.html.twig', [
+			'clientSecret' => $intent->client_secret
+		]);
 	}
 }

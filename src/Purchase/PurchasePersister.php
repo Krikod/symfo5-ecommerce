@@ -7,7 +7,6 @@ use App\Entity\Purchase;
 use App\Entity\PurchaseItem;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Security;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class PurchasePersister {
 

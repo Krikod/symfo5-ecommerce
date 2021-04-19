@@ -83,11 +83,18 @@ class PurchaseConfirmationController extends AbstractController {
 		// Grace à notre PurchasePersister via le __construct()
 		$this->persister->storePurchase( $purchase);
 
-		$this->cart->empty();
+//		$this->cart->empty(); // Vider après paiement
 
 //		$flash_bag->add( 'success', 'La commande a bien été enregistrée');
 //		return new RedirectResponse( $this->router->generate( 'purchases_index'));
-		$this->addFlash( 'success', 'La commande a bien été enregistrée');
-		return $this->redirectToRoute( 'purchases_index');
+
+		// Diriger vers le form de paieent à la place:
+//		$this->addFlash( 'success', 'La commande a bien été enregistrée');
+//		return $this->redirectToRoute( 'purchases_index');
+		return $this->redirectToRoute( 'purchase_payment_form', [
+			'id' => $purchase->getId()
+		]);
+
+
 	}
 }

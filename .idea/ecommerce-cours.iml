@@ -38,6 +38,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
@@ -131,6 +132,7 @@
           <root url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
           <root url="file://$MODULE_DIR$/vendor/symfony/cache" />
           <root url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/config" />
@@ -220,6 +222,7 @@
           <root url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
           <root url="file://$MODULE_DIR$/vendor/symfony/cache" />
           <root url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
           <root url="file://$MODULE_DIR$/vendor/symfony/config" />

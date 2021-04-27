@@ -70,8 +70,8 @@
                         // Show error to your customer
                         console.log(result.error.message);
                     } else {
-                        // The payment succeeded!
-                        console.log(result);
+                        // The payment succeeded! Redirection url entière:
+                        window.location.href = "{{ url('purchase_payment_success', {'id': purchase.id}) }}";
                     }
                 });
             });

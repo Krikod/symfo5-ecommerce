@@ -30,16 +30,16 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     App\Taxes\Calculator:
-      arguments:
-        $tva: 20
+        arguments:
+            $tva: 20
 
     App\Taxes\Detector:
-      arguments:
-        $limit: 100
+        arguments:
+            $limit: 100
 
     Cocur\Slugify\Slugify: ~
 
     App\Stripe\StripeService:
-      arguments:
-        $secretKey: sk_test_51Ih0llBZitoH9S2VaCqyUGfiThz5nenZkUJHez4eiRpb7R82cXWLGY9HfVJ0lgO1CUWT6BBkfb6qeooV5FztkQst00ITUjRAiS
-        $publicKey: pk_test_51Ih0llBZitoH9S2VcEFgz0NFg4SoSefsQEsWDhu3lMfxGiDraaMlgDYC1eiR9t3NiwRaAnvvC1RuPSpOLyKikVZH00g6kBOx3L
+        arguments:
+            $secretKey: '%env(STRIPE_SECRET_KEY)%'
+            $publicKey: '%env(STRIPE_PUBLIC_KEY)%'

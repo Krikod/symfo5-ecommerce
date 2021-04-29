@@ -16,10 +16,14 @@ class StripeService {
 		$this->publicKey = $publicKey;
 	}
 
+	public function getPublicKey(  ) : string {
+		return $this->publicKey;
+	}
+
 	public function getPaymentIntent(Purchase $purchase) {
 		\Stripe\Stripe::setApiKey($this->secretKey);
 
-//		// Méthode Create nous envoie un objet de type PaymentIntent
+		//		// Méthode Create nous envoie un objet de type PaymentIntent
 //		$intent = \Stripe\PaymentIntent::create([
 //			'amount' => $purchase->getTotal(),
 //			'currency' => 'eur',

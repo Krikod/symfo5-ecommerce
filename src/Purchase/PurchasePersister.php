@@ -23,8 +23,9 @@ class PurchasePersister {
 	public function storePurchase( Purchase $purchase ) {
 		 // Intégrer tout ce qu'il faut et persister la purchase.
 		 $purchase->setUser($this->security->getUser())
-		          ->setPurchasedAt(new \DateTime())
-		          ->setTotal($this->cart->getTotal());
+//		          ->setPurchasedAt(new \DateTime()) // PrePersist fait cela dans l'E
+//		          ->setTotal($this->cart->getTotal())
+					;
 
 		 $this->em->persist( $purchase);
 

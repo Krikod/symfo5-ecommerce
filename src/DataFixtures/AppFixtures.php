@@ -66,7 +66,8 @@ class AppFixtures extends Fixture
 		for ($c = 0; $c < 3; $c++) {
 			$category = new Category();
 			$category->setName($faker->department) // Bezhanov
-				->setSlug(strtolower($this->slugger->slug($category->getName())));
+//				->setSlug(strtolower($this->slugger->slug($category->getName())))
+			;
 
 			$manager->persist($category);
 
@@ -77,7 +78,7 @@ class AppFixtures extends Fixture
 				$product->setName($faker->productName) // Bezhanov
 				        ->setPrice($faker->price(4000, 20000)) // lib Liior
 						// construct: slug à partir du nom du produit
-						->setSlug(strtolower($this->slugger->slug($product->getName())))
+//						->setSlug(strtolower($this->slugger->slug($product->getName())))
 						->setCategory($category)
 						->setShortDescription($faker->paragraph())
 						// bluemmb, true=images différentes

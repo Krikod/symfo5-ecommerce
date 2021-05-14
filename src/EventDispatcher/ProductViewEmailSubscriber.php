@@ -28,20 +28,20 @@ class ProductViewEmailSubscriber implements EventSubscriberInterface {
 	}
 
 	public function sendEmail(ProductViewEvent $event) {
-		
-		$email = new TemplatedEmail();
-		$email->from(new Address("contact@mail.com", "Infos de la boutique"))
-			->to("admin@mail.com")
-			->text("un visiteur est en train de voir la page du produit n° " .
-			$event->getProduct()->getId())
-//			->html("<h1>Visite du produit n° {$event->getProduct()->getId()}</h1>")
-				->htmlTemplate('emails/product_view.html.twig')
-			->context([
-				'product' => $event->getProduct()
-			])
-			->subject("Visite du produit n° " . $event->getProduct()->getId());
 
-		$this->mailer->send($email);
+//		$email = new TemplatedEmail();
+//		$email->from(new Address("contact@mail.com", "Infos de la boutique"))
+//			->to("admin@mail.com")
+//			->text("un visiteur est en train de voir la page du produit n° " .
+//			$event->getProduct()->getId())
+////			->html("<h1>Visite du produit n° {$event->getProduct()->getId()}</h1>")
+//				->htmlTemplate('emails/product_view.html.twig')
+//			->context([
+//				'product' => $event->getProduct()
+//			])
+//			->subject("Visite du produit n° " . $event->getProduct()->getId());
+//
+//		$this->mailer->send($email);
 		
 		$this->logger->info("Un email a été envoyé à l'admin pour le produit n° " .
 		                    $event->getProduct()->getId());

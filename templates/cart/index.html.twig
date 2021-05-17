@@ -22,7 +22,7 @@
                 {% for item in items %}
                     <tr>
                         <td>{{ item.product.name }}</td>
-                        <td>{{ item.product.price / 100 }}</td>
+                        <td>{{ item.product.price|amount}}</td>
                         <td>
                             <a href="{{ path('cart_add', {'id':item.product.id}) }}?returnToCart=true" class="btn btn-sm btn-primary">
                                 <i class="fas fa-plus"></i>
@@ -34,7 +34,7 @@
 
                         </td>
                         {#<td>{{ (item.qty * item.product.price) / 100 }}</td>#}
-                        <td>{{ item.total / 100 }}</td>
+                        <td>{{ item.total|amount }}</td>
                         <td>
                             <a href="{{ path('cart_delete', {'id': item.product.id}) }}" class="btn btn-sm btn-danger">
                                 <i class="fas fa-trash"></i>
@@ -46,7 +46,7 @@
             <tfoot>
                 <tr>
                     <td colspan="3">Total: </td>
-                    <td colspan="2">{{ total / 100 }}</td>
+                    <td colspan="2">{{ total|amount }}</td>
                 </tr>
             </tfoot>
         </table>

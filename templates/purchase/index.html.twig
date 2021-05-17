@@ -29,11 +29,11 @@
                         <ul>
                             {# Twig appelle getProductName sur la purchaseItem (méthode Entité PurchaseItem) #}
                             {% for item in p.purchaseItems %}
-                                <li>{{ item.quantity }} x {{ item.productName }} ({{ item.total / 100 }} €)</li>
+                                <li>{{ item.quantity }} x {{ item.productName }} ({{ item.total|amount }})</li>
                             {% endfor %}
                         </ul>
                     </td>
-                    <td>{{ p.total / 100 }} €</td>
+                    <td>{{ p.total|amount }}</td>
                 </tr>
             {% endfor %}
         </tbody>

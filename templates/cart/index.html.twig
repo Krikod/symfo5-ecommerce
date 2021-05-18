@@ -22,7 +22,8 @@
                 {% for item in items %}
                     <tr>
                         <td>{{ item.product.name }}</td>
-                        <td>{{ item.product.price|amount}}</td>
+                        {#<td>{{ item.product.price|amount(' $', '.', ',')}}</td>#}
+                        <td>{{ item.product.price|amount }}</td>
                         <td>
                             <a href="{{ path('cart_add', {'id':item.product.id}) }}?returnToCart=true" class="btn btn-sm btn-primary">
                                 <i class="fas fa-plus"></i>
